@@ -2,9 +2,31 @@
 
 - [cks-notes](#cks-notes)
   - [Kubernetes Secure Architecture](#kubernetes-secure-architecture)
+    - [Public Key Infrastructture (PKI)](#public-key-infrastructture-pki)
+    - [Links](#links)
     - [[P] Find various Kubernetes certificates](#p-find-various-kubernetes-certificates)
 
 ## Kubernetes Secure Architecture
+
+![Kubernetes Architecture](/img/1.png "Kubernetes Architecture")
+
+### Public Key Infrastructture (PKI)
+
+CA (Certificate Authority) is trusted root for all the certificates inside the cluster.
+
+All cluster certificates are signed by the CA.
+
+![CA scheme](/img/2.png "CA scheme")
+
+Some of the components have only client certificate to communicate with API server, some of them have server certificates for be able to verify the client.
+
+![Interaction between server and client certificates](/img/3.png "Interaction between server and client certificates")
+
+### Links
+
+- [All You Need to Know About Certificates in Kubernetes](https://www.youtube.com/watch?v=gXz4cq3PKdg)
+- [Kubernetes Components](https://kubernetes.io/docs/concepts/overview/components)
+- [PKI certificates and requirements](https://kubernetes.io/docs/setup/best-practices/certificates)
 
 ### [P] Find various Kubernetes certificates
 
