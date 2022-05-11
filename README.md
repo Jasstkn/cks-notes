@@ -20,7 +20,7 @@
 
 **Possible places:**
 
-    ```bash
+    ```
     # main certificates
     $ ls -l /etc/kubernetes/pki
     -rw-r--r-- 1 root root 1155 May 10 07:00 apiserver-etcd-client.crt
