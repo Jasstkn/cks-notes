@@ -4,7 +4,16 @@
   - [Kubernetes Secure Architecture](#kubernetes-secure-architecture)
     - [Public Key Infrastructture (PKI)](#public-key-infrastructture-pki)
     - [[P] Find various Kubernetes certificates](#p-find-various-kubernetes-certificates)
-    - [Links](#links)
+    - [Links-1](#links-1)
+  - [Containers under the hood](#containers-under-the-hood)
+    - [Namespaces = isolation](#namespaces--isolation)
+      - [PID](#pid)
+      - [Mount](#mount)
+      - [Network](#network)
+      - [User](#user)
+    - [Container isolation](#container-isolation)
+    - [Links-2](#links-2)
+  - [Network policies](#network-policies)
 
 ## Kubernetes Secure Architecture
 
@@ -79,8 +88,59 @@ Some of the components have only client certificate to communicate with API serv
     -rw------- 1 root root 1675 May 10 07:00 kubelet.key
     ```
 
-### Links
+### Links-1
 
 - [All You Need to Know About Certificates in Kubernetes](https://www.youtube.com/watch?v=gXz4cq3PKdg)
 - [Kubernetes Components](https://kubernetes.io/docs/concepts/overview/components)
 - [PKI certificates and requirements](https://kubernetes.io/docs/setup/best-practices/certificates)
+
+## Containers under the hood
+
+![Comparison between Kernel space and User space](/img/4.png "Comparison between Kernel space and User space")
+
+![Comparison between containers and virtual machines](/img/5.png "Comparison between containers and virtual machines")
+
+### Namespaces = isolation
+
+#### PID
+
+- isolates processes from each other
+- one process can't see others
+- ptocess ID 10 can exist multiple times, once in every namespace
+
+#### Mount
+
+- restrict access to mounts or root filesystem
+
+#### Network
+
+- only access to certain network devices
+- firewall & routing rules & socket port numbers
+- not able to see all traffic or contact all endpoints
+
+#### User
+
+- different set of user ids used
+- user(0) inside one namespace can be different from user (0) inside another
+- don't use the host-root user(0) inside the container
+
+### Container isolation
+
+![Container isolation](/img/6.png "Container isolation")
+
+### Links-2
+
+- [What have containers done for you lately?](https://www.youtube.com/watch?v=MHv6cWjvQjM)
+
+## Network policies
+
+- Firewall rules in Kubernetes
+- Implemented by the Nwtwork plugins CNI (Calico / Weave / etc)
+- Namespace level
+- Restrict the ingress and/or Egress for a group of Pods based on certain rules and conditions
+
+Without NetworkPolicies:
+
+- by default every pod can access every pod
+- pods aren't isolated by default
+
