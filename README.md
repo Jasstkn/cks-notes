@@ -14,6 +14,7 @@
     - [Container isolation](#container-isolation)
     - [Links-2](#links-2)
   - [Network policies](#network-policies)
+    - [Examples](#examples)
 
 ## Kubernetes Secure Architecture
 
@@ -144,3 +145,9 @@ Without NetworkPolicies:
 - by default every pod can access every pod
 - pods aren't isolated by default
 
+### Examples
+
+Deny all egress traffic from specific group of pods
+
+<!-- MARKDOWN-AUTO-DOCS:START (CODE:src=./manifests/networkpolicy-deny-egress.yaml) -->
+<!-- MARKDOWN-AUTO-DOCS:END -->
