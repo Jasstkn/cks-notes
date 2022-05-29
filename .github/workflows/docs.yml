@@ -3,9 +3,6 @@ name: docs
 on:
   push
 
-permissions:
-  actions: write
-
 jobs:
   generate-docs:
     name: generate-docs
