@@ -173,7 +173,6 @@ Allow egress traffic from a group of pods(namespace=default, selector id=fronten
 2. a group of pods(id=backend) within the same namespace because there is no namespace selector.
 
 <!-- MARKDOWN-AUTO-DOCS:START (CODE:src=./manifests/networkpolicy-2-egress.yaml) -->
-<!-- The below code snippet is automatically added from ./manifests/networkpolicy-deny-egress.yaml -->
 
 ### Multiple NetworkPolicies
 
