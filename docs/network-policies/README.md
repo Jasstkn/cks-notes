@@ -1,8 +1,11 @@
 # Network policies
 
 - [Network policies](#network-policies)
+  - [Theory](#theory)
   - [Examples](#examples)
   - [Multiple NetworkPolicies](#multiple-networkpolicies)
+
+## Theory
 
 - Firewall rules in Kubernetes
 - Implemented by the Nwtwork plugins CNI (Calico / Weave / etc)
