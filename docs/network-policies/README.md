@@ -4,6 +4,7 @@
   - [Theory](#theory)
   - [Examples](#examples)
   - [Multiple NetworkPolicies](#multiple-networkpolicies)
+  - [Links](#links)
 
 ## Theory
 
@@ -78,3 +79,7 @@ spec:
 - If a pod has more than one NetworkPolicy:
   - then the union of all NetworkPolicies is applied
   - order doesn't affect policy result
+
+## Links
+
+- [Kubernetes documentation: Network Policies](https://kubernetes.io/docs/concepts/services-networking/network-policies)
