@@ -151,7 +151,7 @@ Without NetworkPolicies:
 Deny all egress(=outgoing) traffic from a group of pods(selector id=frontend)
 
 <!-- MARKDOWN-AUTO-DOCS:START (CODE:src=./manifests/networkpolicy-deny-egress.yaml) -->
-<!-- The below code snippet is automatically added from ./manifests/networkpolicy-deny-egress.yaml -->å
+<!-- The below code snippet is automatically added from ./manifests/networkpolicy-deny-egress.yaml -->
 ```yaml
 api: networking.k8s.io/v1
 kind: NetworkPolicy
